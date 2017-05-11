@@ -29,12 +29,6 @@ namespace SP2Saver
 
         int progressBarIncrementer = 0;
         decimal progressBarValue;
-
-        //decimal autosaveSecondsRemaining;
-        //decimal autosaveMinutesRemaining;
-        //decimal backupSecondsRemaining;
-        //decimal backupMinutesRemaining;
-
         int saveCount = 1; //used for appending the incremented number to the backup file path so it doesn't overwrite the same file and creates a few one every time
 
         public Form1()
@@ -86,44 +80,17 @@ namespace SP2Saver
                 textBox1.ReadOnly = false;
                 textBox4.ReadOnly = false;
             }
-
-            //if (autosaveTimeConvert == 0)
-            //{
-            //    autosaveTimeConvert = autosaveTime / 1000;
-            //}
-            //if (backupTimeConvert == 0)
-            //{
-            //    backupTimeConvert = backupTime / 1000;
-            //}
-
-            //autosaveTimeConvert--;
-            //backupTimeConvert--;
-            //autosaveSecondsRemaining = autosaveTimeConvert % 60;
-            //autosaveMinutesRemaining = autosaveTimeConvert / 60;
-            //backupSecondsRemaining = backupTimeConvert % 60;
-            //backupMinutesRemaining = backupTimeConvert / 60;
-            //label3.Text = autosaveSecondsRemaining.ToString();
-            //label8.Text = autosaveMinutesRemaining.ToString();
-            //label14.Text = backupSecondsRemaining.ToString();
-            //label12.Text = backupMinutesRemaining.ToString();
-            //label3.Text = autosaveTimeConvert.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //double test = 300000;           
             button3.PerformClick();
             saveStartTime = DateTime.Now; //time at the click of the button
             backupStartTime = DateTime.Now; //time at the click of the button
             timer2.Interval = Convert.ToInt32(1);
             timer1.Interval = Convert.ToInt32(autosaveTime);
             timer3.Interval = Convert.ToInt32(backupTime);
-            // autosaveTimeConvert = autosaveTime / 1000;
-            // backupTimeConvert = backupTime / 1000;
-            // label3.Text = autosaveSecondsRemaining.ToString();
-            // label8.Text = autosaveMinutesRemaining.ToString();
-            //label14.Text = backupSecondsRemaining.ToString();
-            //label12.Text = backupMinutesRemaining.ToString();
+
             timer1.Start();
             timer2.Start();
             timer3.Start();
@@ -150,8 +117,7 @@ namespace SP2Saver
             autosaveTimeRemaining = Convert.ToDecimal(textBox3.Text);
             backupTimeRemaining = Convert.ToDecimal(textBox5.Text);
 
-            progressBarValue = 300 / ((Convert.ToInt32(textBox3.Text)) * 60); 
-
+            progressBarValue = 300 / ((Convert.ToInt32(textBox3.Text)) * 60);
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -1,0 +1,4 @@
+Directions: This program can be used to "autosave" any game server that runs from a command line and has CLI save commands. 
+"Autosave Path" is used to determine the path at which the file will save to and "Auto Backup Path" is the location that the backup will save to. 
+The backup will create a new file entirely every X minutes that you specify rather than overwriting the save file like the typical "Autosave," the top text field, will do. 
+Path Edit" locks down the filepaths in the program to allow or disallow you to edit the location once the program has started.
